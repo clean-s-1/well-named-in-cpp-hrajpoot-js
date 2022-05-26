@@ -26,7 +26,7 @@ std::string telecomColorCoder::ColorPair::toColorPairReferenceManual(){
     colorPairStr += MinorColorNames[_minorColor];
     return colorPairStr;
 }
-//function returns the ColorPair object for givin pair number
+
 telecomColorCoder::ColorPair telecomColorCoder::fetchColorFromPairNumber(const int pairNumber) {
     const int zeroBasedPairNumber = pairNumber - 1;
     MajorColor majorColor = (MajorColor)(zeroBasedPairNumber / numberOfMinorColors);

@@ -1,6 +1,5 @@
 #include "testColorCodePair.h"
 
-//function to test pair number with color code pair.
 void UnitTest::testNumberToPair(int pairNumber,
     telecomColorCoder::MajorColor expectedMajorColor,
     telecomColorCoder::MinorColor expectedMinorColor)
@@ -12,21 +11,20 @@ void UnitTest::testNumberToPair(int pairNumber,
     assert(colorPair.fetchMinorColor() == expectedMinorColor);
 }
 
-//function to test pair number with reference manual color-code pair.
 void UnitTest::testNumberToColorPairRefManual(int pairNumber,
     telecomColorCoder::MajorColor expectedMajorColor,
     telecomColorCoder::MinorColor expectedMinorColor)
 {
     telecomColorCoder::ColorPair colorPair =
         telecomColorCoder::fetchColorFromPairNumber(pairNumber);
+    std::string fetchedReferenceManual = colorPair.toColorPairReferenceManual();
     std::cout << "Pair " << pairNumber << " also called " 
-	<< colorPair.toColorPairReferenceManual() << " pair" << std::endl;
+	<< fetchedReferenceManual << " pair" << std::endl;
+    assert(colorPair.fetchReferenceManual() == fetchedReferenceManual);
     assert(colorPair.fetchMajorColor() == expectedMajorColor);
     assert(colorPair.fetchMinorColor() == expectedMinorColor);
 }
 
-
-//function to test color code pair with pair number.
 void UnitTest::testPairToNumber(
     telecomColorCoder::MajorColor expectedMajorColor,
     telecomColorCoder::MinorColor expectedMinorColor,

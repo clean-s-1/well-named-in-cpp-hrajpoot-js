@@ -24,6 +24,7 @@ std::string telecomColorCoder::ColorPair::toColorPairReferenceManual(){
     std::string colorPairStr = MajorColorNames[_majorColor];
     colorPairStr += "-";
     colorPairStr += MinorColorNames[_minorColor];
+    _refrenceManual = colorPairStr;
     return colorPairStr;
 }
 
@@ -37,3 +38,8 @@ telecomColorCoder::ColorPair telecomColorCoder::fetchColorFromPairNumber(const i
 int telecomColorCoder::fetchPairNumberFromColor(MajorColor majorColor, MinorColor minorColor) {
     return majorColor * numberOfMinorColors + minorColor + 1;
 }
+
+std::string telecomColorCoder::ColorPair::fetchReferenceManual(){
+    return _refrenceManual;
+}
+

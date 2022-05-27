@@ -8,11 +8,13 @@ namespace telecomColorCoder
         private:
             MajorColor _majorColor;
             MinorColor _minorColor;
+	    std::string _refrenceManual;
         public:
             ColorPair(MajorColor majorColor, MinorColor minorColor): 
 		_majorColor(majorColor), _minorColor(minorColor) {}
             MajorColor fetchMajorColor();
             MinorColor fetchMinorColor();
+	    std::string fetchReferenceManual();
             std::string toColorPairString();
             std::string toColorPairReferenceManual();
     };
